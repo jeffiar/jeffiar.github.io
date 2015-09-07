@@ -46,8 +46,8 @@ a small {
 }
 
 .wrapper {
-  width:860px;
-  margin:0 auto;
+  width:auto;
+  margin:0;
 }
 
 blockquote {
@@ -96,16 +96,21 @@ img {
 }
 
 header {
-  width:270px;
-  float:left;
-  position:fixed;
+  width:auto;
+  float:none;
+  position:static;
+  padding-right:320px;
 }
 
 header ul {
   list-style:none;
   height:40px;
-
+  width:270px;
   padding:0;
+
+  position:absolute;
+  right:50px;
+  top:52px;
 
   background: #eee;
   background: -moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
@@ -118,7 +123,20 @@ header ul {
   border-radius:5px;
   border:1px solid #d2d2d2;
   box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
-  width:270px;
+
+}
+
+header a small {
+  display:inline;
+}
+
+
+header ul .active {
+    background: #ccc;
+}
+
+header ul .active a {
+    color: white;
 }
 
 header li {
@@ -160,9 +178,19 @@ header ul a strong {
 }
 
 section {
-  width:500px;
-  float:right;
+  float:none;
+  position:static;
+  width:auto;
+  border:1px solid #e5e5e5;
+  border-width:1px 0;
+  padding:20px 0;
   padding-bottom:50px;
+  margin:0 0 20px;
+}
+
+section .container {
+  width:500px;
+  margin:auto;
 }
 
 small {
@@ -177,45 +205,10 @@ hr {
 }
 
 footer {
-  width:270px;
-  float:left;
-  position:fixed;
+  width:auto;
+  float:none;
+  position:static;
   bottom:50px;
-}
-
-@media print, screen and (max-width: 960px) {
-
-  div.wrapper {
-    width:auto;
-    margin:0;
-  }
-
-  header, section, footer {
-    float:none;
-    position:static;
-    width:auto;
-  }
-
-  header {
-    padding-right:320px;
-  }
-
-  section {
-    border:1px solid #e5e5e5;
-    border-width:1px 0;
-    padding:20px 0;
-    margin:0 0 20px;
-  }
-
-  header a small {
-    display:inline;
-  }
-
-  header ul {
-    position:absolute;
-    right:50px;
-    top:52px;
-  }
 }
 
 @media print, screen and (max-width: 720px) {
@@ -225,6 +218,10 @@ footer {
 
   header {
     padding:0;
+  }
+
+  .container {
+    width:none;
   }
 
   header ul, header p.view {
@@ -243,6 +240,10 @@ footer {
 
   header ul {
     display:none;
+  }
+
+  .container {
+    width:none; /* do something about this */
   }
 }
 
